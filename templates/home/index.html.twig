@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="d-flex flex-column ml-2">
+        {% for vehicle in vehicles %}
+                <div class="d-flex flex-row">
+                    <img src={{ vehicle.picturePath }}>
+                    <div class="d-flex flex-column">
+                        <p>{{ vehicle.model.brand.name }} {{ vehicle.model.name }}</p>
+                        <p>Type : {{ vehicle.type.name }}</p>
+                        <p>Capacité : {{ vehicle.capacity }} passagers</p>
+                        <p>Tarif de location : {{ vehicle.price }}€ par jour</p>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}
