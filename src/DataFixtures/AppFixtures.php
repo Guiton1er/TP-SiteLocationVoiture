@@ -131,7 +131,7 @@ class AppFixtures extends Fixture
         $vehicle1->setModel($model1);
         $vehicle1->setNumberKilometers(30000);
         $vehicle1->setNumberPlate("GG-666-XD");
-        $vehicle1->setPicturePath("");
+        $vehicle1->setPicturePath("/image/vehicle3.jpg");
         $vehicle1->setPrice(50);
         $vehicle1->setType($type1);
         $vehicle1->setYearOfVehicle(2024);
@@ -141,7 +141,7 @@ class AppFixtures extends Fixture
         $vehicle2->setModel($model2);
         $vehicle2->setNumberKilometers(120000);
         $vehicle2->setNumberPlate("DG-727-FR");
-        $vehicle2->setPicturePath("");
+        $vehicle2->setPicturePath("/image/vehicle2.jpg");
         $vehicle2->setPrice(35);
         $vehicle2->setType($type2);
         $vehicle2->setYearOfVehicle(2015);
@@ -151,7 +151,7 @@ class AppFixtures extends Fixture
         $vehicle3->setModel($model3);
         $vehicle3->setNumberKilometers(150500);
         $vehicle3->setNumberPlate("AH-053-BH");
-        $vehicle3->setPicturePath("");
+        $vehicle3->setPicturePath("/image/vehicle1.jpg");
         $vehicle3->setPrice(60);
         $vehicle3->setType($type3);
         $vehicle3->setYearOfVehicle(2010);
