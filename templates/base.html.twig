@@ -2,16 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}SLV{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
         {% block javascripts %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
+    </head>
+    <body>
+        <div class="d-flex flex-row justify-content-between p-4 bg-dark text-white">
+            <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded">
+                <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Home</a>    
+            </button>
+            <div class="d-flex flex-column justify-content-center">
+                <h1 class="align-self-center">Location de voitures</h1>
+                <h3 class="align-self-center">Le choix parfait pour votre voyage</h3>
+            </div>
+            <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded">
+                <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Log in</a>    
+            </button>
+        </div>
+        <div class="container d-flex justify-content-center bg-light">
+            {% block body %}{% endblock %}
+        </div>
     </body>
+    <footer class="d-flex flex-column flex-grow-1 justify-content-center p-4 bg-dark text-white">
+        <div class="align-self-center">&copy; SLV 2024, tous droits réservés</div>
+    </footer>
 </html>
