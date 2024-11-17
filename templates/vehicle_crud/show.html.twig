@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Véhicule{% endblock %}
+
+{% block body %}
+    <h1>Vehicle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Identifiant</th>
+                <td>{{ vehicle.id }}</td>
+            </tr>
+            <tr>
+                <th>Capacité</th>
+                <td>{{ vehicle.capacity }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ vehicle.price }}</td>
+            </tr>
+            <tr>
+                <th>Kilometrage</th>
+                <td>{{ vehicle.numberKilometers }}</td>
+            </tr>
+            <tr>
+                <th>Immatriculation</th>
+                <td>{{ vehicle.numberPlate }}</td>
+            </tr>
+            <tr>
+                <th>Année du véhicule</th>
+                <td>{{ vehicle.yearOfVehicle }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ vehicle.picturePath }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_vehicle_crud_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('app_vehicle_crud_edit', {'id': vehicle.id}) }}">Modifier</a>
+
+    {{ include('vehicle_crud/_delete_form.html.twig') }}
+{% endblock %}

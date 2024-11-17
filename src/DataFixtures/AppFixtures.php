@@ -12,9 +12,16 @@ use App\Entity\Type;
 use App\Entity\Vehicle;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    private UserPasswordHasherInterface $hasher;
+
+    public function __construct(UserPasswordHasherInterface $userPasswordHasherInterface) {
+        $this->hasher = $userPasswordHasherInterface;
+    }
+
     public function load(ObjectManager $manager): void
     {
         /*************************************************************************************************
@@ -31,6 +38,8 @@ class AppFixtures extends Fixture
         $customer1->setPhone("06 23 87 30 21");
         $customer1->setPostCode("12000");
         $customer1->setRole("CLIENT");
+        $password = $this->hasher->hashPassword($customer1, 'password');
+        $customer1->setPassword($password);
 
         $customer2 = new Customer();
         $customer2->setAddress("4 Rue Winston Churchill");
@@ -42,6 +51,8 @@ class AppFixtures extends Fixture
         $customer2->setPhone("07 45 98 65 37");
         $customer2->setPostCode("57000");
         $customer2->setRole("CLIENT");
+        $password = $this->hasher->hashPassword($customer2, 'password');
+        $customer2->setPassword($password);
 
         $customer3 = new Customer();
         $customer3->setAddress("Courtines du Bastion, 32 Rue des Chantiers de France");
@@ -53,6 +64,8 @@ class AppFixtures extends Fixture
         $customer3->setPhone("07 45 98 65 37");
         $customer3->setPostCode("59140");
         $customer3->setRole("ADMIN");
+        $password = $this->hasher->hashPassword($customer3, 'password');
+        $customer3->setPassword($password);
 
         /*************************************************************************************************
          * Fixtures of State

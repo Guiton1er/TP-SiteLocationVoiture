@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de connexion{% endblock %}
+
+{% block body %}
+    <div class="d-flex flex-column m-4 gap-2">
+        <h3>Page de connexion</h3>
+        {% if app.session.get("logAs") != null %}
+            <div>
+                <h3>Vous êtes déjà connecté !</h3>
+                <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded">
+                    <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Retour à l'accueil</a>    
+                </button>
+                <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded" onclick={{ app.session.remove("logAs") }}>
+                    <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Se déconnecter</a>    
+                </button>
+            </div>
+        {% else %}
+            {{ form(form) }}
+        {% endif %}
+    </div>
+{% endblock %}

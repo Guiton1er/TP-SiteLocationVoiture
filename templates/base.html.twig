@@ -12,16 +12,18 @@
         {% endblock %}
     </head>
     <body class="bg-light">
-        <div class="d-flex flex-row justify-content-between p-4 bg-dark text-white">
+        <div class="d-flex flex-row justify-content-between p-3 px-4 bg-dark text-white">
             <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded">
                 <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Home</a>    
             </button>
+            {% if app.session.get("logAs") == "admin" %}
+            {% endif %}
             <div class="d-flex flex-column justify-content-center">
                 <h1 class="align-self-center">Location de voitures</h1>
                 <h3 class="align-self-center">Le choix parfait pour votre voyage</h3>
             </div>
             <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded">
-                <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Log in</a>    
+                <a href="{{ path('login') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Log in</a>    
             </button>
         </div>
         <div class="container my-4 p-2 bg-white shadow">
