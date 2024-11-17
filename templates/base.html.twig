@@ -11,7 +11,7 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    <body class="bg-light">
         <div class="d-flex flex-row justify-content-between p-4 bg-dark text-white">
             <button class="bg-light text-dark p-2 font-weight-bold my-auto rounded">
                 <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Home</a>    
@@ -24,7 +24,7 @@
                 <a href="{{ path('home') }}" class="text-dark p-2 font-weight-bold text-decoration-none">Log in</a>    
             </button>
         </div>
-        <div class="container d-flex justify-content-center bg-light">
+        <div class="container my-4 p-2 bg-white shadow">
             {% block body %}{% endblock %}
         </div>
     </body>
